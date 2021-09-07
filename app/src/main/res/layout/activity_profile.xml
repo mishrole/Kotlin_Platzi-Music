@@ -2,19 +2,27 @@
 <!--
 Match Parent : Push to cover viewport
 Wrap Content : Size depends on content
+
+Tools : View on Design (only)
  -->
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:gravity="end|bottom"
-    android:background="@color/purple_200">
+    android:gravity="center">
 
     <TextView
+        android:id="@+id/tvProfileTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hola mishrole, curso básico de Interfaces" />
+        tools:background="@color/purple_200"
+        tools:textSize="20sp"
+        tools:text="Hola mishrole, curso básico de Interfaces" />
     <EditText
+        tools:background="@color/teal_200"
+        android:hint="Escribe tu nombre"
+        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

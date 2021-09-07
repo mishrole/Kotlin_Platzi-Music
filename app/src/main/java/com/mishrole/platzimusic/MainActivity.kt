@@ -10,11 +10,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         // Resources reference
-        R.color.purple_200
+        //R.color.purple_200
 
         /*
         * View is an inline element
         * ViewGroup is a group of inline elements, and those elements inherit properties from the parent
         * */
+
+        val tvProfileTitle = R.id.tvProfileTitle.toString()
     }
 }
