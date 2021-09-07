@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+- Linear Layout : View group parent
+Orientation could be Horizontal or Vertical
+
+On Vertical Orientation:
+Each element position depends on order (arranged one below the other)
+So, if we have 100 items and only 88 of them have space on the screen, the remaining 12 will not be visible
+
+On Horizontal Orientation:
+Each item is added to the right of the previous one
+Depending on the country, the elements of your application may be read from right to left
+
+** Is possible to have a Linear Layout INSIDE a Linear Layout
+We can easily mix orientation between layouts to create complex views
+
+Layout Gravity vs Gravity
+
+In a View Group, layout gravity affects all children.
+In an element, layout gravity only affects this element
+-->
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:drawablePadding="12dp"
+        android:layout_margin="12dp"
+        android:drawableTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_user" />
+
+    <EditText
+        android:drawablePadding="12dp"
+        android:layout_margin="12dp"
+        android:drawableTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_password" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+    </Space>
+
+    <Button
+        android:layout_margin="12dp"
+        android:text="@string/button_login"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</androidx.appcompat.widget.LinearLayoutCompat>

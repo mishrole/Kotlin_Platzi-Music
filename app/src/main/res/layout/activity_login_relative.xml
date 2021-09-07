@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ - Relative Layout : Floating elements aligned with respect to other elements using id references
+If we try to draw a complex layout with LinearLayout, our application performance will be poor
+because android needs to draw the hierarchy and it will have multiple Linear Layouts inside
+
+Element A
+layout_alignParentStart="true" align element to the left
+layout_alignParentTop=true" align element to the top
+
+Element B
+layout_alignParentEnd="true align element to the right
+layout_alignParentTop=true" align element to the top
+
+Element C
+layout_alignParentStart="true" align element to the left
+layout_below="@id/B" align element below B
+
+Element D
+layout_alignParentEnd="true align element to the right
+layout_alignParentBottom="true" align element to the bottom
+layout_alignParentStart="true" align element to the left
+
+** Element D will be stretched and take the entire width of the page
+*** It's similar to flexbox in web development
+ -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/ivLoginLogo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:layout_below="@id/ivLoginLogo"
+        android:id="@+id/etLoginUsername"
+        android:drawablePadding="12dp"
+        android:layout_margin="12dp"
+        android:drawableTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_user" />
+
+    <EditText
+        android:id="@+id/etLoginPassword"
+        android:layout_below="@id/etLoginUsername"
+        android:drawablePadding="12dp"
+        android:layout_margin="12dp"
+        android:drawableTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_password" />
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:text="@string/button_login"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="0dp"
+        android:layout_margin="12dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

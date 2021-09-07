@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-Match Parent : Push to cover viewport
-Wrap Content : Size depends on content
-
-Tools : View on Design (only)
-
 - Frame Layout : The other layouts take as much space as possible on the screen
 with FrameLayout an element will take the size that we indicate with respect to another larger element
 
