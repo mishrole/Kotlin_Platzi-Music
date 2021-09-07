@@ -6,59 +6,67 @@ Wrap Content : Size depends on content
 
 Tools : View on Design (only)
 
-- Frame Layout : The other layouts take as much space as possible on the screen
-with FrameLayout an element will take the size that we indicate with respect to another larger element
+- Constraint Layout: Similar to Relative Layout
+By Default in Android Studio
+Elements REACT to changes
+All views needs to be aligned
 
-Elements are aligned to the top left
-Frame Layout will adapt to the larger element
-We can also use gravity to order layers and elements
+app namespace -> res-auto
+Ctrl + Alt + L -> Organize code
 
-layout_gravity = "center"
-
-Frame Layout is versatile, but it is recommended to have only one Frame Layout, or one child to keep good performance
+If at runtime we have an animation that modifies an element (hides/shows) like android:visibility="gone",
+with Constraint Layout all the elements connected will be accommodated when this change is detected.
 -->
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
     <ImageView
-        android:layout_gravity="center_horizontal"
         android:id="@+id/ivLoginLogo"
         android:layout_width="160dp"
         android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/etLoginUsername"
-        android:drawablePadding="12dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginHorizontal="12dp"
-        android:drawableTint="@color/colorAccent"
-        android:drawableStart="@drawable/ic_person"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_user" />
+        android:layout_margin="12dp"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="12dp"
+        android:drawableTint="@color/colorAccent"
+        android:hint="@string/hint_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLoginLogo" />
 
     <EditText
         android:id="@+id/etLoginPassword"
-        android:layout_marginTop="180dp"
-        android:layout_marginHorizontal="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="12dp"
         android:drawableTint="@color/colorAccent"
-        android:drawableStart="@drawable/ic_lock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_password" />
+        android:hint="@string/hint_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etLoginUsername" />
 
     <Button
-        android:layout_gravity="bottom"
-        android:text="@string/button_login"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="12dp"
-        android:layout_height="wrap_content" />
-</FrameLayout>
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/button_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>
