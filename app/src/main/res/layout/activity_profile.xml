@@ -4,6 +4,23 @@ Match Parent : Push to cover viewport
 Wrap Content : Size depends on content
 
 Tools : View on Design (only)
+
+
+- Linear Layout : View group parent
+Orientation could be Horizontal or Vertical
+
+On Vertical Orientation:
+Each element position depends on order (arranged one below the other)
+So, if we have 100 items and only 88 of them have space on the screen, the remaining 12 will not be visible
+
+On Horizontal Orientation:
+Each item is added to the right of the previous one
+Depending on the country, the elements of your application may be read from right to left
+
+** Is possible to have a Linear Layout INSIDE a Linear Layout
+We can easily mix orientation between layouts to create complex views
+
+
  -->
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
