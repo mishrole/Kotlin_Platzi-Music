@@ -16,6 +16,46 @@ Ctrl + Alt + L -> Organize code
 
 If at runtime we have an animation that modifies an element (hides/shows) like android:visibility="gone",
 with Constraint Layout all the elements connected will be accommodated when this change is detected.
+
+
+Styles Order:
+1. Element style
+2. General style
+3. Theme style
+
+If our element have a property, even if Theme is global, element property have priority
+
+
+# # # # # # # # * Android Resource Naming * # # # # # # # #
+<WHAT>_<WHERE>_<DESCRIPTION>_<SIZE>
+
+<WHAT> fixed set of options choose the right one below
+<WHERE> custom part Android view subclass "all" if reused in != screens
+<DESCRIPTION> differentiate multiple elements on one screen
+<SIZE> always optional [xdp] or bucket [small]
+
+
+Layouts
+<WHAT>_<WHERE>.xml -> <WHAT> is activity, fragment, view, item, or layout
+e.g. activity_main.xml
+
+Strings
+<WHERE>_<DESCRIPTION>
+e.g. main_intro or all_done
+
+Drawables
+<WHERE>_<DESCRIPTION>_<SIZE>
+e.g. all_infoicon_small or main_background
+
+IDs
+<WHAT>_<WHERE>_<DESCRIPTION> -> <WHAT> is name of Android/Custom view class
+e.g. linearlayout_main_fragmentcontainer
+
+Dimensions
+<WHAT>_<WHERE>_<DESCRIPTION>_<SIZE> -> <WHAT> is width, height, size, margin, padding, elevation, keylinew or textsize
+e.g. keyline_all_text
+
+
 -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
