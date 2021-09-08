@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Red" parent="Theme.PlatziMusic">
+        <item name="android:textColor">#FF00FF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Theme.Green" parent="Theme.PlatziMusic">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:background">#FF00FF</item>
+    </style>
 </resources>
